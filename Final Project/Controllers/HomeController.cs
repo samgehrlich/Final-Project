@@ -22,6 +22,26 @@ namespace Final_Project.Controllers
         {
             return View();
         }
+        public IActionResult Page1()
+        {
+            return View();
+        }
+        public IActionResult Page2()
+        {
+            return View();
+        }
+        public IActionResult Page3()
+        {
+            return View();
+        }
+        public IActionResult Page4()
+        {
+            return View();
+        }
+        public IActionResult Page5()
+        {
+            return View();
+        }
 
         
 
