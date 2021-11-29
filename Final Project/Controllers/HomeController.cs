@@ -22,7 +22,7 @@ namespace Final_Project.Controllers
         {
             return View();
         }
-        public IActionResult Page1()
+        public IActionResult SamGehrlich()
         {
             return View();
         }
