@@ -1,32 +1,35 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
+﻿<!DOCTYPE html>
 <style>
-    #myHeader {
+    .myHeader {
         padding: 20px;
         text-align: center;
     }
 
-    #text {
+    .text {
         padding-left: 20px;
     }
-</style>
 
+    .center {
+        text-align: center;
+        border: 5px solid green
+    }
+</style>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]  Sam Gehrlich</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
 <body style="background-color:powderblue;">
 
 
-    <div class="text-center">
-        <h1 style="background-color:forestgreen">Welcome!</h1>
-    </div>
-    <div class="text-center">
-        <h1 style="background-color:forestgreen">My Favorite Hobbies</h1>
-    </div>
-    <div class="text-center">
-        <h2 style="background-color:forestgreen">Video Games!</h2>
-    </div>
 
-    <h4 id="myHeader">Favorite Video Game Categories</h4>
+    <h1 class="center">My Favorite Hobbies</h1>
+    <h1 class="center">Video Games</h1>
+
+    <h4 id="myHeader">Favorite Video Games</h4>
     <ul>
         <li><strong>Dark Souls 1, 2, and 3</strong></li>
         <li><strong>Gears of War 1, 2, and 3</strong></li>
@@ -44,3 +47,4 @@
     </ol>
 
 </body>
+</html>
