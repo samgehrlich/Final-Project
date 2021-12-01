@@ -13,6 +13,25 @@
         text-align: center;
         border: 5px solid green
     }
+    .column {
+        float: left;
+        padding: 10px;
+    }
+
+        .column.side {
+            width: 25%;
+        }
+
+        .column.middle {
+            width: 50%;
+            padding-left: 120px;
+        }
+
+    .roww:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 </style>
 <html lang="en">
 <head>
@@ -45,6 +64,29 @@
         <li><strong>Playstation 5</strong></li>
         <li><strong>Alienware</strong></li>
     </ol>
+
+    <h1 class="center">About Me</h1>
+    <h5>Sam Gehrlich, University of Cincinnati Student</h5>
+
+    <div class="roww">
+        <div class="column side">
+            <h2>Work Experience</h2>
+            <p>I have worked at Mios Pizza for 7 years.  I was a manager there who would run the kitchen and make sure everything ran smoothly. I also have done construction work at GHK.  I have done COMPTIA work and have experience in coding languages such as java and html.  I currently am trying to CO-OP for an insurance company called CareStar.</p>
+        </div>
+
+        <div class="column middle">
+            <h2>Random Information</h2>
+            <p>My name is Sam Gehrlich.  I am a Senior at the University of Cincinnati and I am currently majoring in Informational Technology.  I have only 2 semesters of classes left before graduation.  I have lived in Cincinnati my whole life.  I own 2 dogs one being a wolf hound mix and the othe a lab.  I hope to eventually acquire a job in cyber security or software development.  </p>
+        </div>
+
+        <div class="column side">
+            <h2>IT Experience</h2>
+            <p>I have coding experience in javascript, java, html, and C#.  All of these our important languages to know for software development.  I also have some experience with SQL and databases.</p>
+        </div>
+
+     </div>
+
+
 
 </body>
 </html>
