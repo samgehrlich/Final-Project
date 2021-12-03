@@ -5,7 +5,15 @@
 @{
     ViewData["Title"] = "About Colin";
 }
+<style>
+    .border-3 {
+        border-width: 70px !important;
+    }
+    .text-lg-left {
+        font-size: 150%;
+    }
 
+</style>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,16 +29,85 @@
 
 <body>
     <div class="container" style="width: 1920px; height: 1080px;" >
+
         <div class="d-inline-flex">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+            <p class="border-right border-dark text-lg-left" style="width:1000px; height:650px">
+                Hello, my name is Colin Vitols! I am a third-year student going for a BSIT Degree with a focus on Software Development
+                <br>My page is going to be about my favorite hobby, which is video games. I play an assortment of many video games, ranging from fighting games, FPSs, and RPGS
+                <br>To the right, I have my character information from the MMORPG I play the most currently: Final Fantasy XIV: Online
+                <br>The data is collected from a community driven tool, and I am displaying my character, my mount collection progress, and my triple triad collection progress
+                <br>Collecting all the cards will reward me a mount, hence why I want to track it.
+                <br>
+                <br>
+                <br>Below you can see a table of all my favorite video games, as you can tell, they tend to have older relase dates.
+                <br>Nowadays I don't have as much time as I wish I did to play video games, but it still remains my favorite hobby. 
+            </p>
+
             <div class="float-right sticky-top">
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                <div>
+                    <p>
+                        Triple Triad Card Progress
+                    </p>
+
+                    <div class="progress">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: @Model.triadPrecent;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">@Model.allMounts / @Model.totalMounts</div>
+                    </div>
+
                 </div>
-                <img src="@Model.portraitLink" style="width: 350px; height: 450px;" class="img-fluid" />
+                <div>
+                    <p>Mount Collection Progress</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: @Model.mountPrecent;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">@Model.allCards / @Model.totalCards</div>
+                    </div>
+                </div>
+                <div>
+                    <img src="@Model.portraitLink" style="width: 350px; height: 450px; padding-top: 25px" class="img-fluid" />
+                    <p>In-Game Name: @Model.inGameName </p>
+                    <p>Last Updated: @Model.lastUpdated</p>
+                </div>
             </div>
         </div>
-            
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="text-sm-center">Genres</th>
+                    <th class="text-sm-center">Name</th>
+                    <th class="text-sm-center">Release Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-sm-left">Fighting Game</td>
+                    <td class="text-sm-center">BlazBlue: Central Fiction</td>
+                    <td class="text-sm-center">2015</td>
+                </tr>
+                <tr>
+                    <td class="text-sm-left">First Person Shooter</td>
+                    <td class="text-sm-center">DOOM 2016</td>
+                    <td class="text-sm-center">2016</td>
+                </tr>
+                <tr>
+                    <td class="text-sm-left">Modern Military Shooter</td>
+                    <td class="text-sm-center">Battlefield 4</td>
+                    <td class="text-sm-center">2013</td>
+                </tr>
+                <tr>
+                    <td class="text-sm-left">Japanese Role Playing Game (JRPG)</td>
+                    <td class="text-sm-center">NieR Replicant ver.1.22474487139...</td>
+                    <td class="text-sm-center">2010/2021</td>
+                </tr>
+                <tr>
+                    <td class="text-sm-left">Massively Multiplayer Role Playing Game</td>
+                    <td class="text-sm-center">Final Fantasy XIV: Online</td>
+                    <td class="text-sm-center">2010</td>
+                </tr>
+                <tr>
+                    <td class="text-sm-left">Third Person Shooter</td>
+                    <td class="text-sm-center">Red Dead Redemption</td>
+                    <td class="text-sm-center">2010</td>
+                </tr>
+            </tbody>
+        </table>  
     </div>
 
 </body>
