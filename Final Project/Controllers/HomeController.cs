@@ -63,7 +63,7 @@ namespace Final_Project.Controllers
             }
             return View(xivobj);
         }
-        public IActionResult Page3()
+        public IActionResult RaeshawnBart()
         {
             return View();
         }
