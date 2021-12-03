@@ -34,9 +34,11 @@ namespace Final_Project.Controllers
         {
             //making a api call to xivcollect and creating object to pass to model. 
             var url = "https://ffxivcollect.com/api/characters/10323955";
-            var bruh = new XIVCollectDTO();
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(url);
+            var xivobj = new XIVCollectDTO();
+            HttpClient client = new HttpClient
+            {
+                BaseAddress = new Uri(url)
+            };
 
             client.DefaultRequestHeaders.Accept.Add(
             new MediaTypeWithQualityHeaderValue("application/json"));
@@ -47,9 +49,19 @@ namespace Final_Project.Controllers
                 //creating xivobject for webpage to consume
                 var test = response.ToString();
                 JObject json = JObject.Parse(response.ToString());
-                bruh.portraitLink = json.SelectToken("portrait").Value<string>();
+                xivobj.portraitLink = json.SelectToken("portrait").Value<string>();
+                xivobj.inGameName = json.SelectToken("name").Value<string>();
+                xivobj.totalMounts = json.SelectToken("mounts").SelectToken("total").Value<string>();
+                xivobj.totalCards = json.SelectToken("triad").SelectToken("total").Value<string>();
+                xivobj.allCards = json.SelectToken("triad").SelectToken("count").Value<string>();
+                xivobj.allMounts = json.SelectToken("mounts").SelectToken("count").Value<string>();
+                xivobj.triadPrecent = Math.Truncate((decimal)((double.Parse(xivobj.allCards) / double.Parse(xivobj.totalCards))*100)).ToString() + "%";
+                xivobj.mountPrecent = Math.Truncate((decimal)((double.Parse(xivobj.allMounts) / double.Parse(xivobj.totalMounts)) * 100)).ToString() + "%";
+                xivobj.lastUpdated = json.SelectToken("last_parsed").Value<DateTime>();
+
+
             }
-            return View(bruh);
+            return View(xivobj);
         }
         public IActionResult Page3()
         {
