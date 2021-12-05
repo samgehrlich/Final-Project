@@ -67,7 +67,7 @@ namespace Final_Project.Controllers
         {
             return View();
         }
-        public IActionResult Page4()
+        public IActionResult SamuelDappen()
         {
             return View();
         }
