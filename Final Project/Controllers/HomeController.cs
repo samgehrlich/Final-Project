@@ -71,7 +71,7 @@ namespace Final_Project.Controllers
         {
             return View();
         }
-        public IActionResult BillAppiagyei()
+        public IActionResult Page5()
         {
             return View();
         }
